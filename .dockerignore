@@ -1,0 +1,21 @@
+# Common
+/.venv
+/.vscode
+__pycache__/
+
+# Project
+/.git
+/.github
+/.mypy_cache
+/.pytest_cache
+/.ruff_cache
+/postgres_data
+/.dockerignore
+# NOTE: VERY IMPORTANT otherwise the CLOUD RUN won't find the credentials in the secret manager.
+/.env
+/polaris_settings-local
+/.gitignore
+/docker-compose.yml
+/Dockerfile
+/Makefile
+/elasticsearch_data

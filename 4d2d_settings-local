@@ -1,0 +1,8 @@
+SERVICE_NAME=4d2d-local
+SECRET_KEY=notsecretatall
+
+DB_HOST=4d2d-db
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_NAME=postgres
