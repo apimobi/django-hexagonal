@@ -13,4 +13,4 @@ class DOffer:
     title: str
     completed: bool
     updated: datetime
-
+    user:DUser

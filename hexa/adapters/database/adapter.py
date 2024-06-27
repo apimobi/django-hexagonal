@@ -1,21 +1,16 @@
 from domain.database_interface import DatabaseInterface
 from .models import Offer
-from domain.models import DOffer
+from domain.models import DOffer, DUser
 import datetime
+from django.contrib.auth.models import User
 
 
 class PostgresAdapter(DatabaseInterface):
 
-    def get_offer(self, offer_id: int) -> DOffer:
-        print("offer_id", offer_id)
+    def get_offer(self, offer_id:int, user:User = None) -> DOffer:
         offer = Offer.objects.get(id=offer_id)
-        dUser = {
-            "id": offer.user.id,
-            "username": offer.user.username,
-            "email": offer.user.email
-        }
-        print('>>>>', dUser)
-        result = DOffer(offer.id, offer.title, offer.completed, datetime.datetime.now())
+        dUser = DUser(offer.user.id,offer.user.email)
+        result = DOffer(offer.id, offer.title, offer.completed, datetime.datetime.now(), dUser)
         return result
 
     def get_offers(self) -> list[DOffer]:
