@@ -33,19 +33,28 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     networks:
-      - network 
+      - network
 
   rabbitmq:
-      image: rabbitmq:3-management-alpine
+      image: rabbitmq:3.13-management-alpine
       container_name: 'rabbitmq'
       ports:
-          - 5672:5672
-          - 15672:15672
+        - 5672:5672
+        - 15672:15672
       volumes:
-          - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
-          - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+        - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+        - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+        - type: bind
+          source: ./rabbitmq-enabled-plugins
+          target: /etc/rabbitmq/enabled_plugins
+        - type: bind
+          source: ./rabbitmq.config
+          target: /etc/rabbitmq/rabbitmq.config
+        - type: bind
+          source: ./rabbitmq-defs.json
+          target: /etc/rabbitmq/rabbitmq-defs.json
       networks:
-          - network
+        - network
 
 networks:
   network:
