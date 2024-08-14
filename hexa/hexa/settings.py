@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'api',
     'domain',
     'adapters',
+    'message_listener',
 ]
 
 MIDDLEWARE = [
