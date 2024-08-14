@@ -10,7 +10,7 @@ class TestApiSetup(TestCase):
         self.client = APIClient()
         fake_email = f"{str(uuid.uuid4())}@email.com"
         self.user = User.objects.create(
-            email=str(uuid.uuid4()),
+            email=fake_email,
         )
         self.offer = Offer.objects.create(
             title = 'test model 0',

@@ -1,0 +1,38 @@
+Job advertisements (upper left)
+
+ID (PK)
+Department
+title
+Startdate of application time (if this date is reached the advertisement is visible on the website)
+Enddate (if this date is reached it automatically gets hidden)
+Description
+Type of job (internship, full-time etc)
+isActive (boolean if the adv. is visible)
+Location
+contact
+CV
+Anschreiben, Zeugnisse & weitere Doks is a boolean
+-> when it is true those documents are required
+-> release (HR has to check every advertisement and has to release them)
+Employees (upper middle)
+ID
+Firstname
+Lastname
+Email
+role
+External registrations (upper left - all accounts who register for the job portal)
+ID
+Firstname
+Lastname
+email
+phonenumber
+Applications (lower middle table)
+ID (PK)
+Job advertisement ID (FK)
+Applicant ID (FK - ID from external registrations)
+Firstname
+Lastname
+email
+phonenumber
+status (shows if applications is being looked at and stuff)
+Files (boolean to check if a zip file was uploaded with the application)
