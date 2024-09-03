@@ -29,7 +29,7 @@ export const BlogPostPreview: FunctionComponent<{
           {/* {formatDate(post.publishedAt || post.updatedAt, "dd MMMM yyyy")} */}
         </div>
         <div className="prose lg:prose-lg leading-relaxed md:text-lg line-clamp-4 text-muted-foreground">
-          {post.description}
+          {/* {post.description} */}
         </div>
         <div className="text-sm text-muted-foreground">
           {/* {post.tags.map((tag) => (

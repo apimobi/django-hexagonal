@@ -12,12 +12,13 @@ const Page = async ({
 }) => {
   const page = searchParams.page ? parseInt(searchParams.page as string) : 1;
   const result = await wisp.getPosts({ limit: 6, page });
-  const res = await fetch('http://4d2d:8080/api/offers?format=json').then((res) => {
+  const res = await fetch('http://4d2d:8080/api/offers?format=json', { next: { revalidate: 3 }}).then((res) => {
       return res
   }
   )
 
   const json = await res.json();
+  console.log(json);
 
   return (
     <div className="container mx-auto px-5 mb-10">
